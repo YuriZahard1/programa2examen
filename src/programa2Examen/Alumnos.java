@@ -25,8 +25,13 @@ public class Alumnos {
 			
 		}
 		System.out.println(mapa);
+	
 		for(String s:mapa.keySet()) {
-			double media=((double)mapa.get(s).get(0)+mapa.get(s).get(1)+mapa.get(s).get(2))/3;
+			double total=0;
+			for(int i=0; i<mapa.values().size()-1; i++) {
+			 total+=((double)mapa.get(s).get(i));
+			}
+			double media=total/3;
 			System.out.println(s+" "+String.format("%.2f", media));
 		}
 	}
